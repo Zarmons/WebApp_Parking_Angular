@@ -9,18 +9,36 @@ import { MovementVehiclesComponent } from './feature/movement-vehicles/movement-
 import { ReportComponent } from './feature/report/report/report.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatMenuModule } from '@angular/material/menu';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { DialogModule } from 'primeng/dialog';
+import { CalendarModule } from 'primeng/calendar';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, MovementVehiclesComponent, ReportComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    MovementVehiclesComponent,
+    ReportComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MatMenuModule,
+    FormsModule,
+
+    TableModule,
+    ToolbarModule,
+    ButtonModule,
+    InputTextModule,
+    DialogModule,
+    CalendarModule,
+    InputNumberModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent],
