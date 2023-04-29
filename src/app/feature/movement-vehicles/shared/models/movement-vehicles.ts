@@ -1,12 +1,12 @@
 export interface MovementVehicles {
-  name: string,
-  laboratory: string,
-  expiration: string,
-  manufacture: string,
-  stock: string,
+  typeVehicles: string,
+  placa: string,
+  timeEntry: string,
+  documentNumber: string,
+  status: string,
 }
 
-export interface City {
-  name: string;
-  code: string;
+export interface typeVehicles {
+  type: string;
+  value: string;
 }

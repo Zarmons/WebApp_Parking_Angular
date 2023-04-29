@@ -15,7 +15,8 @@ export class ReportComponent implements OnInit {
       { field: 'name', header: 'Tipo de vehículo' },
       { field: 'laboratory', header: 'Placa' },
       { field: 'expiration', header: 'Hora de ingreso' },
-      { field: 'manufacture', header: 'Numero de Documento' },
+      { field: 'manufacture', header: 'Hora de salida' },
+      { field: 'stock', header: 'Valor' },
       { field: 'stock', header: 'Estado' },
     ];
   }

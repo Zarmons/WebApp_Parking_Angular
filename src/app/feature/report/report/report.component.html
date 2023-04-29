@@ -1,24 +1,23 @@
-<h1 class="title">reporte de parqueadero</h1>
+<h1 class="title">Reporte de parqueadero</h1>
 <div class="container-table">
-    <p-table #dt [columns]="columns" [value]="report"
-      [globalFilterFields]="['name','laboratory','expiration','manufacture']" [rows]="10" [paginator]="true"
-      [tableStyle]="{ 'min-width': '75rem' }" [rowHover]="true" dataKey="id"
-      currentPageReportTemplate="Mostrando  {first} a {last} de {totalRecords} entradas" [showCurrentPageReport]="true">
+  <p-table #dt [columns]="columns" [value]="report"
+    [globalFilterFields]="['name','laboratory','expiration','manufacture']" [rows]="10" [paginator]="true"
+    [tableStyle]="{ 'min-width': '75rem' }" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Mostrando  {first} a {last} de {totalRecords} entradas" [showCurrentPageReport]="true">
 
-      <ng-template pTemplate="header" class="container-header">
-        <tr>
-          <th pSortableColumn="name" *ngFor="let col of columns">
-            {{ col.header }}
-          </th>
-        </tr>
-      </ng-template>
-
-      <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr>
-          <td *ngFor="let col of columns; index as i">
-            {{ rowData[col.field] }}
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
+    <ng-template pTemplate="header" class="container-header">
+      <tr>
+        <th pSortableColumn="name" *ngFor="let col of columns">
+          {{ col.header }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns; index as i">
+          {{ rowData[col.field] }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
