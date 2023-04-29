@@ -1,1 +1,66 @@
-<p>movement-vehicles works!</p>
+<h1 class="title">Ingreso de vehículos</h1>
+<div class="container-table">
+  <div class="card">
+    <p-toolbar styleClass="mb-4 gap-2">
+      <ng-template pTemplate="left">
+        <button pButton pRipple type="button" icon="pi pi-plus" label="Ingresar Vehículo" class="p-button-success"
+          (click)="showDialog()"></button>
+      </ng-template>
+    </p-toolbar>
+
+    <p-table #dt [columns]="columns" [value]="movementVehicles"
+      [globalFilterFields]="['name','laboratory','expiration','manufacture']" [rows]="10" [paginator]="true"
+      [tableStyle]="{ 'min-width': '75rem' }" [rowHover]="true" dataKey="id"
+      currentPageReportTemplate="Mostrando  {first} a {last} de {totalRecords} entradas" [showCurrentPageReport]="true">
+
+      <ng-template pTemplate="header" class="container-header">
+        <tr>
+          <th pSortableColumn="name" *ngFor="let col of columns">
+            {{ col.header }}
+          </th>
+          <th>Acciones</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+          <td *ngFor="let col of columns; index as i">
+            {{ rowData[col.field] }}
+          </td>
+          <td class="table-body-button">
+            <button pButton pRipple icon="pi pi-sign-out" class="p-button-rounded p-button-info"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <p-dialog header="Ingreso de vehículos" [(visible)]="display" [modal]="true" [style]="{ width: '50vw', backgroundColor:'red' }"
+    [draggable]="false" [resizable]="false" class="dialog-header" >
+    <form (ngSubmit)="onData()" #myForm="ngForm">
+      <div class="container-form">
+        <div class="rows">
+          <p-dropdown [options]="types" [(ngModel)]="selectedCity1" placeholder="Seleccione" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+        <div class="rows">
+          <span class="p-float-label">
+            <input id="laboratory" type="text" pInputText />
+            <label for="laboratory">Placa</label>
+          </span>
+        </div>
+        <div class="rows">
+          <span class="p-float-label">
+            <input id="laboratory" type="text" pInputText />
+            <label for="laboratory">Numero de documento</label>
+          </span>
+        </div>
+      </div>
+    </form>
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-times" (click)="display = false" label="Cancelar" styleClass="p-button-danger"
+        type="button"></p-button>
+      <p-button icon="pi pi-check" (click)="display = false" label="Ingresar" styleClass="p-button-success"
+        type="submit"></p-button>
+    </ng-template>
+  </p-dialog>
+</div>
