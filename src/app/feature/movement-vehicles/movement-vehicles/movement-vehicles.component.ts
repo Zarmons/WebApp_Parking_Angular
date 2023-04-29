@@ -1,6 +1,5 @@
 import {Component, ViewChild, OnInit} from '@angular/core';
 import {MovementVehicles} from '../shared/models/movement-vehicles';
-import { typeVehicles } from '../shared/models/movement-vehicles';
 
 @Component({
   selector: 'app-movement-vehicles',
@@ -11,7 +10,6 @@ export class MovementVehiclesComponent implements OnInit {
   display: boolean = false;
   columns: any[] = [];
   types: any[] = [];
-  selectedCity1: typeVehicles[] = [];
 
   constructor() { }
 
@@ -35,7 +33,7 @@ export class MovementVehiclesComponent implements OnInit {
   }
 
   onData() {
-    console.log(this.selectedCity1)
+    // console.log(this.selectedCity1)
   }
 
   deleteDrug(index: number) {
